@@ -48,7 +48,7 @@ public class QrscanPlugin implements MethodCallHandler, PluginRegistry.ActivityR
         switch (call.method) {
             case "scan":
                 this.result = result;
-                showBarcodeView();
+                showBarcodeView(false);
                 break;
             case "scan_photo":
                 this.result = result;
@@ -76,7 +76,7 @@ public class QrscanPlugin implements MethodCallHandler, PluginRegistry.ActivityR
         }
     }
 
-    private void showBarcodeView() {
+    private void showBarcodeView(Boolean showImagePicker) {
         Intent intent = new Intent(activity, SecondActivity.class);
         activity.startActivityForResult(intent, REQUEST_CODE);
     }
